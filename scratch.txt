@@ -1,0 +1,43 @@
+address:
+ 99320 Mortimer Overpass
+Rippinstad, NM 60594-2842
+address.split(): ['99320', 'Mortimer', 'Overpass', 'Rippinstad,', 'NM', '60594-2842']
+len(address_split):  6
+address_0: 99320
+address_1: Mortimer
+address_2: Overpass
+address_3: Rippinstad,
+address_4: NM
+
+address:
+ 21419 Orland Row
+North Vanessamouth, AK 95060
+address.split(): ['21419', 'Orland', 'Row', 'North', 'Vanessamouth,', 'AK', '95060']
+len(address_split):  7
+address_0: 21419
+address_1: Orland
+address_2: Row
+address_3: North
+address_4: Vanessamouth,
+
+address:
+ 885 Jamarcus Tunnel Apt. 685
+Rosaliaport, AK 12661
+address.split(): ['885', 'Jamarcus', 'Tunnel', 'Apt.', '685', 'Rosaliaport,', 'AK', '12661']
+len(address_split):  8
+address_0: 885
+address_1: Jamarcus
+address_2: Tunnel
+address_3: Apt.
+address_4: 685
+
+address:
+ 6380 Rogahn Trafficway Apt. 553
+Port Tomasbury, SD 58596
+address.split(): ['6380', 'Rogahn', 'Trafficway', 'Apt.', '553', 'Port', 'Tomasbury,', 'SD', '58596']
+len(address_split):  9
+address_0: 6380
+address_1: Rogahn
+address_2: Trafficway
+address_3: Apt.
+address_4: 553
