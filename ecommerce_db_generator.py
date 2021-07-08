@@ -30,41 +30,38 @@ else:
 # print(second_name)
 
 address = json_response['address']
-print(f'address:\n', address)
+#print(f'address:\n', address)
 
 address_split = address.split()
-print(f'address.split():', address_split)
+#print(f'address.split():', address_split)
 
-print(f'len(address_split): ', len(address_split))
+#print(f'len(address_split): ', len(address_split))
 
-address_0 = address_split[0]
-print(f'address_0:', address_0)
+street_number = address_split[0]
+#print(f'street_number:', street_number)
 
-address_1 = address_split[1]
-print(f'address_1:', address_1)
+street_name = address_split[1]+' '+address_split[2]
+#print(f'street_name:', street_name)
 
-address_2 = address_split[2]
-print(f'address_2:', address_2)
+zipcode = address_split[len(address_split) - 1]
+#print(f'zipcode: ', zipcode)
 
-address_3 = address_split[3]
-print(f'address_3:', address_3)
+state = address_split[len(address_split) - 2]
+#print(f'state: ', state)
 
-address_4 = address_split[4]
-print(f'address_4:', address_4)
+city = address_split[len(address_split) - 3]
+city_chars = [char for char in city]
+city_chars.remove(',')
+city = ''
 
-""" street_number = address.split()[0]
-unit_number = 000
-city = address.split()[2].split('\n')[1]
-zipcode = address.split()[4]
-state = address.split()[len]
+for char in city_chars:
+    city += char
 
-print(street_number)
-print(unit_number)
-print(city)
-print(zipcode)
-print(state) """
+#print(f'city: ', city)
 
 birth_data = json_response['birth_data']
+print(f'birth_date: ', birth_data)
+
 phone_h = json_response['phone_h']
 email = json_response['email_u'] + json_response['email_d']
 username = json_response['username']
