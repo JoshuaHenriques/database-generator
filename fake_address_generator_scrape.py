@@ -5,7 +5,7 @@ import cloudscraper
 import json
 
 
-def scrape(thread_number):
+def scrape():
     URL = 'https://www.fakeaddressgenerator.com/World/ca_address_generator'
 
     scraper = cloudscraper.create_scraper()
@@ -16,21 +16,15 @@ def scrape(thread_number):
 
     name = results[1].text.split()
     first_name = name[0]
-    # print('first_name: ', first_name)
     last_name = name[2]
-    # print('last_name: ', last_name)
     full_name = first_name + " " + last_name
-    # print('full_name: ', full_name)
 
     phone_number = results[12].text
     phone_number = phone_number.split("-")[0]+phone_number.split("-")[1]+phone_number.split("-")[2]
-    # print('phone_number: ', phone_number)
 
-    email = results[52].text + "@gmail.com"
-    # print('email: ', email)
+    email = last_name + "_" + first_name + phone_number[8] + phone_number[9] + "@gmail.com"
 
     password = results[53].text
-    # print('password: ', password)
 
     date_of_birth = results[4].text
 
@@ -45,31 +39,22 @@ def scrape(thread_number):
         month = date_of_birth.split("/")[1]
 
     date_of_birth = (date_of_birth.split("/")[2][2] + date_of_birth.split("/")[2][3]) + month + day
-    # print('date_of_birth: ', date_of_birth)
 
     street_name = results[7].text.split()[1] + " " + results[7].text.split()[2]
-    # print('street_name: ', street_name)
 
     street_number = results[7].text.split()[0]
-    # print('street_number: ', street_number)
 
     city = results[8].text
-    # print('city: ', city)
 
     postal_code = results[11].text.split()[0] + results[11].text.split()[1]
-    # print('postal_code: ', postal_code)
 
     province = results[10].text
-    # print('province: ', province)
 
     ccn = results[30].text
-    # print('ccn: ', ccn)
 
     four_dig = ccn[12] + ccn[13] + ccn[14] + ccn [15]
-    # print('four_dig: ', four_dig)
 
     cvc = results[31].text
-    # print('cvc: ', cvc)
 
     customer = {
         "firstName": first_name,
@@ -99,7 +84,4 @@ def scrape(thread_number):
         "orders": []
     }
 
-    with open("json_post_data/customer%s.json" % thread_number, "w") as f:
-        json.dump(customer, f)
-    
-    f.close()
+    return customer
