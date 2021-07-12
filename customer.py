@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 import cloudscraper
-import json
 
 
 def scrape():
@@ -11,7 +10,7 @@ def scrape():
     page = scraper.get(URL).content
     soup = BeautifulSoup(page, "html.parser")
     results = soup.find_all("b")
-
+            
     name = results[1].text.split()
     first_name = name[0]
     last_name = name[2]
