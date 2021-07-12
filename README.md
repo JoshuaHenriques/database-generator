@@ -7,6 +7,14 @@ Python script for scraping [fake Canadian address generator](https://www.fakeadd
 
 ```python
 # Pick and choose which attribute to parse
+
+URL = 'https://www.fakeaddressgenerator.com/World/ca_address_generator'
+
+scraper = cloudscraper.create_scraper()
+
+page = scraper.get(URL).content
+soup = BeautifulSoup(page, "html.parser")
+results = soup.find_all("b")
   
 [0]: BASIC INFORMATION
 [1]: Clara O Barajas
