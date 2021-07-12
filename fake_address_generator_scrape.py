@@ -1,6 +1,4 @@
-from sys import argv
 from bs4 import BeautifulSoup
-
 import cloudscraper
 import json
 
