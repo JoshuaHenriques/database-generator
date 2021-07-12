@@ -15,7 +15,12 @@ scraper = cloudscraper.create_scraper()
 page = scraper.get(URL).content
 soup = BeautifulSoup(page, "html.parser")
 results = soup.find_all("b")
+
+for i, result in enumerate(results):
+   print(f'[{i}]: {result.text}')
   
+# Sample raw scrape
+
 [0]: BASIC INFORMATION
 [1]: Clara O Barajas
 [2]: female
