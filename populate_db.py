@@ -5,20 +5,23 @@ import requests
 import json
 import time
 
+
 # Set email restriction to 10 variations "Abbott_Kim{n}" n < 10
 
 def cus_cnt():
     raw_json = requests.get('http://172.105.3.51:8080/api/customers/list/customers')
     print(f'Customer count: {len(json.loads(raw_json.text))}')
 
+
 def task():
-    requests.post('http://172.105.3.51:8080/api/register/customer', json = customer.scrape())
+    requests.post('http://172.105.3.51:8080/api/register/customer', json=customer.main())
+
 
 def main():
     executor = ThreadPoolExecutor(max_workers=8)
-    
+
     i = 0
-    while(True):
+    while True:
         if i == 1000:
             i = 0
             cus_cnt()
