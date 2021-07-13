@@ -2,12 +2,12 @@ from bs4 import BeautifulSoup
 import cloudscraper
 
 
-def scrape():
-    URL = 'https://www.fakeaddressgenerator.com/World/ca_address_generator'
+def main():
+    url = 'https://www.fakeaddressgenerator.com/World/ca_address_generator'
 
     scraper = cloudscraper.create_scraper()
 
-    page = scraper.get(URL).content
+    page = scraper.get(url).content
     soup = BeautifulSoup(page, "html.parser")
     results = soup.find_all("b")
 
@@ -17,7 +17,7 @@ def scrape():
     full_name = first_name + " " + last_name
 
     phone_number = results[12].text
-    phone_number = phone_number.split("-")[0]+phone_number.split("-")[1]+phone_number.split("-")[2]
+    phone_number = phone_number.split("-")[0] + phone_number.split("-")[1] + phone_number.split("-")[2]
 
     email = last_name + "_" + first_name + phone_number[8] + phone_number[9] + "@gmail.com"
 
@@ -25,12 +25,12 @@ def scrape():
 
     date_of_birth = results[4].text
 
-    if (len(date_of_birth.split("/")[0]) == 1):
+    if len(date_of_birth.split("/")[0]) == 1:
         day = "0" + date_of_birth.split("/")[0]
     else:
         day = date_of_birth.split("/")[0]
 
-    if (len(date_of_birth.split("/")[1]) == 1):
+    if len(date_of_birth.split("/")[1]) == 1:
         month = "0" + date_of_birth.split("/")[1]
     else:
         month = date_of_birth.split("/")[1]
@@ -49,7 +49,7 @@ def scrape():
 
     ccn = results[30].text
 
-    four_dig = ccn[12] + ccn[13] + ccn[14] + ccn [15]
+    four_dig = ccn[12] + ccn[13] + ccn[14] + ccn[15]
 
     cvc = results[31].text
 
@@ -82,3 +82,7 @@ def scrape():
     }
 
     return customer
+
+
+if __name__ == "__main__":
+    main()
