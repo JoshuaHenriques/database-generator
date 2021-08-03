@@ -1,9 +1,13 @@
+<p align="center">
+  <h3 align="center">database-generator</h3>
+  <p align="center">
+    Python Scraper
+  </p>
+</p>
 
-# Populate Database
-
+<!-- ABOUT THE PROJECT -->
+## About The Project
 Python script for scraping [fake Canadian address generator](https://www.fakeaddressgenerator.com/World/ca_address_generator) and parsing it into a customer object to insert into database.
-
-## Customize for your database
 
 ```python
 # Pick and choose which attribute to parse
