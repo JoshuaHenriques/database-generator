@@ -1,7 +1,7 @@
 
 # Populate Database
 
-Python script for scraping [fake Canadian address generator](https://www.fakeaddressgenerator.com/World/ca_address_generator) and parsing it into a Customer object to send to the Ecommerce-Demo customer registration endpoint.
+Python script for scraping [fake Canadian address generator](https://www.fakeaddressgenerator.com/World/ca_address_generator) and parsing it into a customer object to insert into database.
 
 ## Customize for your database
 
