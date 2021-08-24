@@ -1,11 +1,10 @@
 <p align="center">
-  <h3 align="center">database-generator</h3>
+  <h3 align="center">Database Generator</h3>
   <p align="center">
-    Python Scraper
+    Python Web Scraper
   </p>
 </p>
 
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 Python script for scraping [fake Canadian address generator](https://www.fakeaddressgenerator.com/World/ca_address_generator) and parsing it into a customer object to insert into database.
 
@@ -60,7 +59,6 @@ requests.post('http://172.105.3.51:8080/api/register/customer', json = customer.
 ./bin/python populate_db.py
 ```
 
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -71,14 +69,12 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-<!-- CONTACT -->
 ## Contact
 
-Personal Website - [https://joshuahenriques.com](https://joshuahenriques.com)
+[https://joshuahenriques.com](https://joshuahenriques.com)
 
-Project Link: [https://github.com/joshuahenriques/database-generator](https://github.com/joshuahenriques/database-generator)
+[https://github.com/joshuahenriques/database-generator](https://github.com/joshuahenriques/database-generator)
