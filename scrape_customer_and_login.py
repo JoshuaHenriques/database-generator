@@ -19,7 +19,7 @@ def main():
     phone_number = results[12].text
     phone_number = phone_number.split("-")[0] + phone_number.split("-")[1] + phone_number.split("-")[2]
 
-    email = last_name + "_" + first_name + phone_number[8] + phone_number[9] + "@gmail.com"
+    email = last_name + "." + first_name + phone_number[8] + "@gmail.com"
 
     password = results[53].text
 
@@ -53,6 +53,14 @@ def main():
 
     cvc = results[31].text
 
+    login = {
+            "roles": ["USER"],
+            "email": email,
+            "phoneNumber": phone_number,
+            "password": password,
+            "enabled": True
+    }
+
     customer = {
         "firstName": first_name,
         "lastName": last_name,
@@ -60,6 +68,7 @@ def main():
         "email": email,
         "password": password,
         "dateOfBirth": date_of_birth,
+        "cart": {},
         "address": {
             "streetName": street_name,
             "streetNumber": street_number,
@@ -67,22 +76,18 @@ def main():
             "city": city,
             "postalCode": postal_code,
             "province": province
-        },
-        "cart": {},
-        "creditCards": [
-            {
+        },        
+        "wallet": [{
                 "fullName": full_name,
                 "ccn": ccn,
                 "expDate": "0425",
                 "cvc": cvc,
                 "fourDig": four_dig
-            }
-        ],
+            }],
         "orders": []
     }
 
-    return customer
-
+    return customer, login
 
 if __name__ == "__main__":
     main()

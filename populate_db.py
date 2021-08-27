@@ -1,6 +1,6 @@
 from concurrent.futures import ThreadPoolExecutor
 
-import customer
+import scrape_customer_and_login
 import requests
 import json
 import time
@@ -8,13 +8,17 @@ import time
 
 # Set email restriction to 10 variations "Abbott_Kim{n}" n < 10
 
-def cus_cnt():
-    raw_json = requests.get('http://172.105.3.51:8080/api/customers/list/customers')
-    print(f'Customer count: {len(json.loads(raw_json.text))}')
+# def cus_cnt():
+#     raw_json = requests.get('http://localhost:8080/api/customer/list')
+#     print(f'Customer count: {len(json.loads(raw_json.text))}')
 
 
 def task():
-    requests.post('http://172.105.3.51:8080/api/register/customer', json=customer.main())
+    customer, login = scrape_customer_and_login.main()
+
+    requests.post('http://localhost:8080/api/customer/add', json=customer)
+
+    requests.post('http://localhost:8080/api/login/add', json=login)
 
 
 def main():
@@ -22,9 +26,9 @@ def main():
 
     i = 0
     while True:
-        if i == 1000:
-            i = 0
-            cus_cnt()
+        # if i == 1000:
+        #     i = 0
+            # cus_cnt()
         executor.submit(task)
         time.sleep(0.002)
         i += 1
