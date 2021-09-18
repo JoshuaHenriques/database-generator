@@ -1,6 +1,6 @@
 from concurrent.futures import ThreadPoolExecutor
 
-import scrape_customer_and_login
+from scrape import scrape
 import requests
 import json
 import time
@@ -14,7 +14,7 @@ import time
 
 
 def task():
-    customer, login = scrape_customer_and_login.main()
+    customer, login = scrape()
 
     requests.post('http://localhost:8080/api/customer/add', json=customer)
 

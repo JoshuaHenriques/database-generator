@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import cloudscraper
 
 
-def main():
+def scrape():
     url = 'https://www.fakeaddressgenerator.com/World/ca_address_generator'
 
     scraper = cloudscraper.create_scraper()
@@ -88,6 +88,3 @@ def main():
     }
 
     return customer, login
-
-if __name__ == "__main__":
-    main()
